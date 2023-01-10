@@ -53,8 +53,8 @@ func processFile(filename string) {
 }
 
 func processChunk(chunk []string, wg *sync.WaitGroup) {
-	for i := 0; i < len(chunk); i++ {
-		processLine(strconv.Itoa(i) + ".: " + chunk[i])
+	for i, v := range chunk {
+		processLine(strconv.Itoa(i) + ".: " + v)
 	}
 
 	defer wg.Done()
